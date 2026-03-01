@@ -5,8 +5,6 @@ import FindBuddy from "./pages/FindBuddy/FindBuddy";
 import { Login } from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-import Dashboard from "./pages/Dashboard/Dashboard";
-
 function App() {
   return (
     <BrowserRouter>
@@ -23,7 +21,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route
             path="/profile"
             element={

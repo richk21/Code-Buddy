@@ -25,7 +25,7 @@ export const Login = () => {
   const onSubmit = async (data: ILoginRequest) => {
     const res = await axios.post(`${backendUrl}/api/auth/login`, data);
     setToken(res.data.token);
-    navigate("/dashboard");
+    navigate("/");
   };
 
   return (

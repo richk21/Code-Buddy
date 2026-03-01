@@ -26,7 +26,7 @@ const CreateProfile = () => {
   const onSubmit = async (data: ISignupRequest) => {
     const res = await axios.post(`${backendUrl}/api/auth/register`, data);
     setToken(res.data.token);
-    navigate("/dashboard");
+    navigate("/");
   };
 
   return (
