@@ -1,73 +1,95 @@
-# React + TypeScript + Vite
+# CodeBuddy Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** for **CodeBuddy**, a platform to connect developers, track tasks, and achieve weekly coding goals together. Built with **React (TypeScript)**, **MUI**, and **Vite**. This is a minimal project meant for dev.to weekly challenge. Code would be refined and updated in every release.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- User authentication and JWT-based authorization
+- Assign and complete tasks with proof submission
+- Weekly progress tracking (hours spent vs goal)
+- Connect with coding buddies based on skill level and focus area
+- Dashboard with points, task stats, and weekly goal visualization
+- Responsive and modern UI using MUI + Tailwind
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 18 + TypeScript**
+- **Vite** for fast development
+- **MUI** for UI components
+- **Tailwind CSS** for styling
+- **Axios** for API calls
+- **React Router DOM** for routing
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📝 Setup
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+
+```bash
+git clone <frontend-repo-url>
+cd codebuddy-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+````bash
+yarn
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. Create a `.env` file at the root:
+
+```env
+VITE_BACKEND_URL=http://localhost:5000
+````
+
+4. Start the development server:
+
+```bash
+yarn dev
+
+The app should be running at `http://localhost:5173` (default Vite port).
+
+---
+
+## 📁 Folder Structure
+
+```
+
+src/
+├─ components/ # Reusable UI components
+├─ api/ # React pages (Home, Dashboard, Profile, etc.)
+├─ api/ # contains all api interfaces
+├─ App.tsx # Main app component
+├─ main.tsx # Entry point
+
+```
+
+---
+
+## 🔗 Environment Variables
+
+| Name               | Description                 |
+| ------------------ | --------------------------- |
+| `VITE_BACKEND_URL` | Base URL of the backend API |
+
+---
+
+## 📦 Scripts
+
+| Command        | Description              |
+| -------------- | ------------------------ |
+| `yarn dev`     | Start dev server         |
+| `yarn build`   | Build production bundle  |
+
+---
+
+## 📄 Notes
+
+- Make sure the **backend server** is running before starting the frontend.
+- Use JWT token for authenticated API calls.
+- All tasks and user data are handled via the backend API.
 ```
