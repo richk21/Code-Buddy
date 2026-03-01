@@ -1,6 +1,7 @@
 # CodeBuddy Frontend
 
-This is the **frontend** for **CodeBuddy**, a platform to connect developers, track tasks, and achieve weekly coding goals together. Built with **React (TypeScript)**, **MUI**, and **Vite**. This is a minimal project meant for dev.to weekly challenge. Code would be refined and updated in every release.
+This is the **frontend** for **CodeBuddy**, a platform to connect developers, track tasks, and achieve weekly coding goals together. Built with **React (TypeScript)**, **MUI**, and **Vite**.
+This is a minimal project meant for **dev.to weekly challenge**. Code will be refined and updated in every release.
 
 ---
 
@@ -11,7 +12,7 @@ This is the **frontend** for **CodeBuddy**, a platform to connect developers, tr
 - Weekly progress tracking (hours spent vs goal)
 - Connect with coding buddies based on skill level and focus area
 - Dashboard with points, task stats, and weekly goal visualization
-- Responsive and modern UI using MUI + Tailwind
+- Responsive and modern UI using **MUI + Tailwind CSS**
 
 ---
 
@@ -37,19 +38,25 @@ cd codebuddy-frontend
 
 2. Install dependencies:
 
-````bash
+```bash
 yarn
+# or
+npm install
+```
 
 3. Create a `.env` file at the root:
 
 ```env
 VITE_BACKEND_URL=http://localhost:5000
-````
+```
 
 4. Start the development server:
 
 ```bash
 yarn dev
+# or
+npm run dev
+```
 
 The app should be running at `http://localhost:5173` (default Vite port).
 
@@ -58,14 +65,12 @@ The app should be running at `http://localhost:5173` (default Vite port).
 ## 📁 Folder Structure
 
 ```
-
 src/
-├─ components/ # Reusable UI components
-├─ api/ # React pages (Home, Dashboard, Profile, etc.)
-├─ api/ # contains all api interfaces
-├─ App.tsx # Main app component
-├─ main.tsx # Entry point
-
+├─ components/    # Reusable UI components
+├─ pages/         # React pages (Home, Dashboard, Profile, etc.)
+├─ api/           # Contains all API calls/interfaces
+├─ App.tsx        # Main app component
+├─ main.tsx       # Entry point
 ```
 
 ---
@@ -82,8 +87,9 @@ src/
 
 | Command        | Description              |
 | -------------- | ------------------------ |
-| `yarn dev`     | Start dev server         |
+| `yarn dev`     | Start development server |
 | `yarn build`   | Build production bundle  |
+| `yarn preview` | Preview production build |
 
 ---
 
@@ -92,4 +98,3 @@ src/
 - Make sure the **backend server** is running before starting the frontend.
 - Use JWT token for authenticated API calls.
 - All tasks and user data are handled via the backend API.
-```
